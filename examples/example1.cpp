@@ -1,31 +1,31 @@
 #include "TinyConsole.h"
 
 void hello() {
-	std::cout << "> Console: Hello World!\n";
+	std::cout << "> User: Hola Mundo!\n";
 }
 
 void say(const std::string& text) {
-	std::cout << "> User: " << text << '\n';
+	std::cout << "> User: Puedo mandar un mensaje => " << text << '\n';
 }
 
-void say2(int a, const std::string& text) {
-	std::cout << "> User" << a << ": " << text << '\n';
+void say2(int num, const std::string& text) {
+	std::cout << "> User: Puedo enviar un numero => " << num << " y un mensaje => " << text << '\n';
 }
 
-void say3(int a, const std::string& text, int b) {
-	std::cout << "> User" << a << ": " << text << " num: " << b << '\n';
+void say3(int num1, const std::string& text, int num2) {
+	std::cout << "> User: Puedo enviar un numero => " << num1 << ", un mensaje => " << text << " y otro numero => " << num2 << '\n';
 }
 
-void say4(int a, const std::string& b, const std::string& c, int d) {
-	std::cout << "> User" << a << ": " << b << c << " num: " << d << '\n';
+void say4(int num1, const std::string& text1, int num2, const std::string& text2) {
+	std::cout << "> User: Puedo enviar mas de dos strings y numeros, nums[" << num1 << ", " << num2 << "] textos" << text1 << ", " << text2 << '\n';
 }
 
 void sum(float a, float b, float c) {
-	std::cout << "> Console: " << a << " + " << b << " + " << c << " = " << a + b + c << '\n';
+	std::cout << "> User: Puedo hacer sumas! " << a << " + " << b << " + " << c << " = " << a + b + c << '\n';
 }
 
 void res(float a, float b) {
-	std::cout << "> Console: " << a << " - " << b << " = " << a - b << '\n';
+	std::cout << "> User: Puedo hacer restas! " << a << " - " << b << " = " << a - b << '\n';
 }
 
 void clear() {
@@ -34,7 +34,8 @@ void clear() {
 
 int main() {
 	hd::TinyConsole cmd('/');
-	std::string text;
+
+	std::cout << "> Utiliza las funciones de tu consola para llamar comandos en tiempo de ejecucion!\n   Ejemplos:\n\n";
 
 	cmd.addCmd("hello", hello);
 	cmd.addCmd("say", say);
@@ -51,21 +52,28 @@ int main() {
         "/say [Hola a todos!]",
         "/say2 12345 [Hola a todos]",
         "/say3 12345 [Hola a todos] 67890",
-		"/say4 12345 [Hola a todos] [Como estan?] 67890",
+	"/say4 12345 [Hola a todos] 67890 [Como estan?]",
         "/sum 4002.342 2414.13 -1341.02",
         "/res 4134.133 -41311.003"
     };
-    for (int i = 0; i < num - 1; i++) {
-        cmd.run(test[i]);
-    }
+	for (int i = 0; i < num; i++) {
+		std::cout << "Comando: " << test[i] << "\n   ";
+		cmd.run(test[i]);
+		std::cout << '\n';
+	}
 
+	std::cout << "\n> Intentalo tu o preciona Enter para terminar el programa...\n";
+
+    std::string text;
     while (true) {
         std::getline(std::cin, text);
         if (text[0] == '/') {
-            cmd.run(text);
+		cmd.run(text);
+        } else if (text == "") {
+		break;
         } else {
-            std::cout << "> HiperDoo: " << text << '\n';
-        }
+		std::cout << "> Default: " << text << '\n';
+	}
     }
 
 	return 0;
