@@ -19,7 +19,7 @@
 </ol>
 <p align="center"><img src="https://pngimage.net/wp-content/uploads/2018/05/blue-line-png.png"></p>
 <h2 id="sobre">Sobre la Librería</h2>
-<p>TinyConsole es una librería de fácil uso y dirigida a todo el publico (principiantes a expertos). Esta librería te da la capacidad de ejecutar cualquier función de tu código en tiempo de ejecución ya sea escribiendo un comando!
+<p>TinyConsole es una librería de fácil uso y dirigida a todo el publico (principiantes a expertos). Esta librería te da la capacidad de ejecutar cualquier función de tu código en tiempo de ejecución con tan solo escribir un comando!
   
 Esto puede ser útil a la hora de hacer pruebas en tu programa en tiempo de ejecución, modificando variables y visualizando los cambios sin modificar el código. O simplemente puede ser usado como una forma en la que el usuario pueda interactuar con tu aplicación.</p>
 <p align="center"><img src="https://pngimage.net/wp-content/uploads/2018/05/blue-line-png.png"></p>
@@ -27,8 +27,14 @@ Esto puede ser útil a la hora de hacer pruebas en tu programa en tiempo de ejec
 <p>Es realmente sencillo implementar esta librería en cualquiera de tus proyectos. Simplemente descargue los 3 archivos (TinyConsole.cpp y .h y ArgConvert.h) y asegúrese que estos archivos estén en la misma carpeta que su archivo main.cpp!</p>
 <p align="center"><img src="https://pngimage.net/wp-content/uploads/2018/05/blue-line-png.png"></p>
 <h2 id="Funcionamiento">Funcionamiento</h2>
-<p>La librería cuenta con solo 2 funciones:</p>
-**Hola**
+La librería permite llamar a cualquiera de tus funciones con solo escribir el comando con el que haya sido enlazado. El comando debe de ser de tipo <b>void</b>, y puede aceptar cuantos parámetros desee (solo parámetros de tipo numérico y texto; char, int, float, string, etc…).
+
+Para empezar a usar la librería, es necesario crear un objeto de la librería, <b>TinyConsole cmd(‘/’)</b>. El constructor de esta clase solo lleva un parámetro, y es el carácter que se usara para llamar a todos los comandos que se hagan.
+
+Para crear un comando, se utiliza la función <b>addCmd("ejem1", func1)</b>, el cual acepta 2 parámetros, el nombre de la función (de tipo std::string) y el puntero de la función a la que se enlazara (solo es necesario escribir el nombre de la función).
+
+Con este paso completado, ya tendrías tu primer comando, el cual puede ser llamado con la función <b>run("/ejem1 123 456")</b>, lleva un solo parámetro, el cual es el string completo de todo tu comando.
+
 <p align="center"><img src="https://pngimage.net/wp-content/uploads/2018/05/blue-line-png.png"></p>
 <h2 id="ejemplo1">Ejemplo 1</h2>
 <p align="center"><img src="https://pngimage.net/wp-content/uploads/2018/05/blue-line-png.png"></p>
