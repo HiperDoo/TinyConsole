@@ -29,7 +29,7 @@ Esto puede ser útil a la hora de hacer pruebas en tu programa en tiempo de ejec
 <h2 id="Funcionamiento">Funcionamiento</h2>
 La librería permite llamar a cualquiera de tus funciones con solo escribir el comando con el que haya sido enlazado. El comando debe de ser de tipo <b>void</b>, y puede aceptar cuantos parámetros desee (solo parámetros de tipo numérico y texto; char, int, float, string, etc…).
 
-Para empezar a usar la librería, es necesario crear un objeto de la librería, <b>TinyConsole cmd(‘/’)</b>. El constructor de esta clase solo lleva un parámetro, y es el carácter que se usara para llamar a todos los comandos que se hagan.
+Para empezar a usar la librería, es necesario crear un objeto de la librería, <b>hd::TinyConsole cmd(‘/’)</b>. El constructor de esta clase solo lleva un parámetro, y es el carácter que se usara para llamar a todos los comandos que se hagan.
 
 Para crear un comando, se utiliza la función <b>addCmd("ejem1", func1)</b>, el cual acepta 2 parámetros, el nombre de la función (de tipo std::string) y el puntero de la función a la que se enlazara (solo es necesario escribir el nombre de la función).
 
