@@ -1,5 +1,8 @@
 # TinyConsole
-
+<p align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-17-brightgreen?logo=c%2B%2B">
+  <img src="https://img.shields.io/badge/Version-v1.0-blue">
+</p>
 
 <details open="open">
   <summary>Contenido</summary>
@@ -15,3 +18,4 @@
     <li><a href="#credits"> ➤ Credits</a></li>
   </ol>
 </details>
+<img src="https://pngimage.net/wp-content/uploads/2018/05/blue-line-png.png">
