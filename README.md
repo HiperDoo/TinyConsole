@@ -27,7 +27,7 @@ Esto puede ser útil a la hora de hacer pruebas en tu programa en tiempo de ejec
 <p>Es realmente sencillo implementar esta librería en cualquiera de tus proyectos. Simplemente descargue los 3 archivos (TinyConsole.cpp y .h y ArgConvert.h) y asegúrese que estos archivos estén en la misma carpeta que su archivo main.cpp!</p>
 <p align="center"><img src="https://pngimage.net/wp-content/uploads/2018/05/blue-line-png.png"></p>
 <h2 id="Funcionamiento">Funcionamiento</h2>
-La librería permite llamar a cualquiera de tus funciones con solo escribir el comando con el que haya sido enlazado. El comando debe de ser de tipo <b>void</b>, y puede aceptar cuantos parámetros desee (solo parámetros de tipo numérico y texto; char, int, float, string, etc…).
+La librería permite llamar a cualquiera de tus funciones con solo escribir el comando con el que haya sido enlazado. La función debe de ser de tipo <b>void</b>, y puede aceptar cuantos parámetros desee (solo parámetros de tipo numérico y texto; char, int, float, string, etc…).
 
 Para empezar a usar la librería, es necesario crear un objeto de la librería, <b>hd::TinyConsole cmd(‘/’)</b>. El constructor de esta clase solo lleva un parámetro, y es el carácter que se usara para llamar a todos los comandos que se hagan.
 
