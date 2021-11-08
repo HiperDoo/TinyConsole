@@ -103,7 +103,21 @@ namespace hd {
         template<typename... FuncArgs>
         void addCmd(const std::string& cmdName, void(*func)(FuncArgs...)) {
             subListArgs<FuncArgs...>(cmdName);
-            this->commandMap[cmdName].function = std::bind(&TinyConsole::callFunc<FuncArgs...>, this, func, std::placeholders::_1);
+            this->commandMap[cmdName].function = std::bind(
+                &TinyConsole::callFunc<FuncArgs...>, this,
+                func, std::placeholders::_1
+            );
+            this->commandMap[cmdName].numParam = sizeof...(FuncArgs);
+        }
+
+        template<typename T, typename... FuncArgs>
+        void addCmd(const std::string& cmdName, void(T::* ptr)(FuncArgs...), T* object) {
+            subListArgs<FuncArgs...>(cmdName);
+            this->commandMap[cmdName].function = std::bind(
+                &TinyConsole::callFunc<FuncArgs...>, this,
+                [object, ptr](auto&&... args) {(object->*ptr)(std::forward<decltype(args)>(args)...);},
+                std::placeholders::_1
+            );
             this->commandMap[cmdName].numParam = sizeof...(FuncArgs);
         }
 
